@@ -36,10 +36,15 @@ def config_plots(  font_sans_serif=False ):
               (0,(11,3,3,3,)), (0,(11,2,5,2)), (0,(17,2)), \
               (0,(17,2,2,2)) ] ) + \
            cycler('color', [ \
-              '#1f77b4', '#ff7f0e', '#2ca02c', \
+              '#bcbd22', '#1f77b4', '#ff7f0e', '#2ca02c', \
               '#d62728', '#9467bd', '#8c564b', \
-              '#e377c2', '#7f7f7f', '#bcbd22', \
-              '#17becf'] ) \
+              '#7f7f7f', '#000000', \
+              '#17becf'
+              #              
+              #'#1f77b4', '#ff7f0e', '#2ca02c', \
+              #'#d62728', '#9467bd', '#8c564b', \
+              #'#e377c2', '#7f7f7f', '#bcbd22', \
+              #'#17becf'] ) \
           )    
     mpl.rcParams["axes.prop_cycle"] = dc
     
