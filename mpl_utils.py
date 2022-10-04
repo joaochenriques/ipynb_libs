@@ -39,7 +39,7 @@ def config_plots(  font_sans_serif=False ):
               '#bcbd22', '#1f77b4', '#ff7f0e', '#2ca02c', \
               '#d62728', '#9467bd', '#8c564b', \
               '#7f7f7f', '#000000', \
-              '#17becf'
+              '#17becf' ] ) \
               #              
               #'#1f77b4', '#ff7f0e', '#2ca02c', \
               #'#d62728', '#9467bd', '#8c564b', \
