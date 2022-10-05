@@ -21,8 +21,8 @@ linecolors = (  '#1f77b4', # blue
                 '#d62728', # red 
                 '#9467bd', # violet
                 '#8c564b', # brown
-                '#17becf', # lightblue                
-                '#f0015f', # light red
+                '#17becf', # light blue                
+                '#ce6dbd', # light violet
                 '#1b9e77', # light green
                 '#393b79', # dark bue
 )
