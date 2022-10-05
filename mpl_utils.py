@@ -3,16 +3,16 @@ import numpy as np
 from cycler import cycler
 import os
 
-linestyles = (  ( 0, (  6, 0 ) ), 
-                ( 0, (  6, 2 ) ), 
-                ( 0, (  6, 1.5, 1.5, 1.5 ) ),
-                ( 0, (  8, 1.5, 1.5, 1.5, 1.5, 1.5 ) ), 
-                ( 0, ( 11, 3 ) ), 
-                ( 0, (  2, 2 ) ), 
-                ( 0, ( 11, 3, 3, 3 ) ), 
-                ( 0, ( 11, 2, 5, 2 ) ), 
-                ( 0, ( 17, 2 ) ), 
-                ( 0, ( 17, 2, 2 , 2 ) ) 
+linestyles = (  (  6, 0 ), 
+                (  6, 2 ), 
+                (  6, 1.5, 1.5, 1.5 ),
+                (  8, 1.5, 1.5, 1.5, 1.5, 1.5 ), 
+                ( 11, 3 ), 
+                (  2, 2 ), 
+                ( 11, 3, 3, 3 ), 
+                ( 11, 2, 5, 2 ), 
+                ( 17, 2 ), 
+                ( 17, 2, 2 , 2 ) 
 )
 
 linecolors = (  '#1f77b4', # blue
@@ -54,7 +54,9 @@ def config_plots( font_sans_serif=False, dpi=280 ):
     mpl.rcParams["figure.figsize"] = ( 6, 4.5 )
     mpl.rcParams["lines.markersize"] = 5
     
-    dc = ( cycler( linestyle = linestyles ) + cycler('color', linecolors ) )    
+    ls = ( (0,l) for l in linestyles )
+    dc = ( cycler( linestyle = ls ) + cycler('color', linecolors ) )    
+    
     mpl.rcParams["axes.prop_cycle"] = dc
     mpl.rcParams['lines.linewidth'] = 1.5
 
