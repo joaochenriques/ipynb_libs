@@ -3,28 +3,31 @@ import numpy as np
 from cycler import cycler
 import os
 
-linestyles = (  (0,(6,0)), (0,(6,2)), (0,(6,1.5,1.5,1.5)), \
-                (0,(8,1.5,1.5,1.5,1.5,1.5)), (0,(11,3)), (0,(2,2)), \
-                (0,(11,3,3,3,)), (0,(11,2,5,2)), (0,(17,2)), \
-                (0,(17,2,2,2)) )
+linestyles = (  ( 0, (  6, 0 ) ), 
+                ( 0, (  6, 2 ) ), 
+                ( 0, (  6, 1.5, 1.5, 1.5 ) ),
+                ( 0, (  8, 1.5, 1.5, 1.5, 1.5, 1.5 ) ), 
+                ( 0, ( 11, 3 ) ), 
+                ( 0, (  2, 2 ) ), 
+                ( 0, ( 11, 3, 3, 3 ) ), 
+                ( 0, ( 11, 2, 5, 2 ) ), 
+                ( 0, ( 17, 2 ) ), 
+                ( 0, ( 17, 2, 2 , 2 ) ) 
+)
 
-linecolors = (  '#1f77b4', '#ff7f0e', '#2ca02c', \
-                '#bcbd22', '#d62728', '#9467bd', '#8c564b', \
-                '#7f7f7f', '#000000', \
-                '#17becf' )
-                             
-#'#bcbd22', '#1f77b4', '#ff7f0e', '#2ca02c', \
-#'#d62728', '#9467bd', '#8c564b', \
-#'#7f7f7f', '#000000', \
-#'#17becf' ] ) \
-#              
-#'#1f77b4', '#ff7f0e', '#2ca02c', \
-#'#d62728', '#9467bd', '#8c564b', \
-#'#e377c2', '#7f7f7f', '#bcbd22', \
-#'#17becf'] ) \
-
+linecolors = (  '#1f77b4', # blue
+                '#ff7f0e', # orange
+                '#2ca02c', # green
+                '#d62728', # red 
+                '#9467bd', # violet
+                '#8c564b', # brown
+                '#17becf', # lightblue                
+                '#f0015f', # light red
+                '#1b9e77', # light green
+                '#393b79', # dark bue
+)
                 
-def config_plots(  font_sans_serif=False ):
+def config_plots( font_sans_serif=False, dpi=280 ):
     
     if font_sans_serif:
       mpl.rcParams['mathtext.fontset'] = 'dejavusans'
@@ -47,14 +50,12 @@ def config_plots(  font_sans_serif=False ):
     mpl.rcParams['axes.formatter.useoffset'] = False
     mpl.rcParams['savefig.directory'] = ""
     mpl.rcParams['savefig.format'] = 'pdf'
-    mpl.rcParams["figure.dpi"] = 280
+    mpl.rcParams["figure.dpi"] = dpi
     mpl.rcParams["figure.figsize"] = ( 6, 4.5 )
     mpl.rcParams["lines.markersize"] = 5
     
-    dc = ( cycler( linestyle = linestyles ) + \
-           cycler('color', linecolors ) )    
+    dc = ( cycler( linestyle = linestyles ) + cycler('color', linecolors ) )    
     mpl.rcParams["axes.prop_cycle"] = dc
-    
     mpl.rcParams['lines.linewidth'] = 1.5
 
     mpl.rcParams['figure.subplot.left'  ] = 0.14
@@ -97,5 +98,4 @@ def inline_label( lbl, x, y, i, fontsize = 8, color = 'k' ):
                   bbox=dict( boxstyle='round, pad=-0.2', 
                              edgecolor='k', facecolor='w',  
                              linewidth=0,
-                             alpha=0.90) 
-                )
+                             alpha=0.90) )
