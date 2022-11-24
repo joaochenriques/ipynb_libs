@@ -1,3 +1,5 @@
+import h5py
+
 #~==============================================================================
 def save_hdf_array( hdf5_Output, group, name, fdata ):
     hdf5_Output.create_dataset( group + name, data=fdata, 
