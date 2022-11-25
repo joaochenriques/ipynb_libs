@@ -1,4 +1,5 @@
 import h5py
+import numpy as np
 
 #~==============================================================================
 def save_hdf_array( hdf5_Output, group, name, fdata ):
@@ -14,11 +15,11 @@ def save_hdf_string( hdf5_Output, group, name, fdata ):
 save_hdf_string.dt_str = h5py.special_dtype( vlen=bytes )
 
 #~==============================================================================
-def read_hdf_array( hdf5_Input, group, name ):
+def load_hdf_array( hdf5_Input, group, name ):
     return np.array( hdf5_Input[ group + name ] )
 
-def read_hdf_scalar( hdf5_Input, group, name ):
+def load_hdf_scalar( hdf5_Input, group, name ):
     return hdf5_Input[ group + name ][()]
 
-def read_hdf_string( hdf5_Input, group, name ):
+def load_hdf_string( hdf5_Input, group, name ):
     return hdf5_Input[ group + name ][()]
