@@ -27,7 +27,7 @@ linecolors = (  '#1f77b4', # blue
                 '#393b79', # dark bue
 )
                 
-def config_plots( font_sans_serif=False, dpi=280 ):
+def config_plots( font_sans_serif=False, dpi=None ):
     
     if font_sans_serif:
       mpl.rcParams['mathtext.fontset'] = 'dejavusans'
@@ -50,10 +50,12 @@ def config_plots( font_sans_serif=False, dpi=280 ):
     mpl.rcParams['axes.formatter.useoffset'] = False
     mpl.rcParams['savefig.directory'] = ""
     mpl.rcParams['savefig.format'] = 'pdf'
-    mpl.rcParams["figure.dpi"] = dpi
     mpl.rcParams["figure.figsize"] = ( 6, 4.5 )
     mpl.rcParams["lines.markersize"] = 5
-    
+
+    if dpi != None:    
+      mpl.rcParams["figure.dpi"] = dpi
+
     ls = ( (0,l) for l in linestyles )
     dc = ( cycler( linestyle = ls ) + cycler('color', linecolors ) )    
     
